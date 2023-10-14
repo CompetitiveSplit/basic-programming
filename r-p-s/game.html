@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Rock, paper, scissors</title>
+    <script>
+      //Random computer integer
+      function getComputerChoice(min, max) {
+        return Math.floor(Math.random() * 3 + 1);
+      }
+
+      //User integer
+      function getUserChoice(player, election) {
+        if (election == 1) {
+          return alert(player + " chose rock");
+        } else if (election == 2) {
+          return alert(player + " chose paper");
+        } else if (election == 3) {
+          return alert(player + " chose scissors");
+        }
+      }
+
+      //Evaluation of the game
+      function start(user, computer) {
+        result = computer - user;
+        if (result == 0) {
+          alert("It's a tie!");
+        } else if (result == -1 || result == 2) {
+          alert("You win!");
+        } else {
+          alert("You lose!");
+        }
+      }
+
+      //initialization
+      let user = 0;
+      let computer = getComputerChoice(1, 3);
+      user = prompt("Choose: 1 for rock ✊, 2 for paper✋, 3 for scissors✌️");
+      getUserChoice("You", user);
+      getUserChoice("Computer", computer);
+      start(user, computer);
+
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Rock, paper, scissors</h1>
+  </body>
+</html>
